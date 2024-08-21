@@ -1,6 +1,12 @@
 .TaskButton {
-  background-color: var(--verde);
   border: 1px solid var(--preto);
   padding: 0.25rem 0.75rem;
   color: var(--cinza);
+}
+
+.TaskButton[tipo="primario"] {
+  background-color: var(--verde);
+}
+.TaskButton[tipo="secundario"] {
+  background-color: var(--rosa);
 }

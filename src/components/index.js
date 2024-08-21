@@ -4,3 +4,4 @@ export * from "./Footer";
 export * from "./TaskForm";
 export * from "./TaskInput";
 export * from "./TaskButton";
+export * from "./TaskList";
