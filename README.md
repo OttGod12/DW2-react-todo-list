@@ -76,6 +76,23 @@ Aprenderemos sobre:
 
 ## Módulo 5 - Gerenciando estao da aplicação
 
+O que você vai aprender nesse módulo?
+
+Vamos aprender sobre o gerenciamento de estado local e global, utilização de hooks e gerenciamento de formulários.
+
+Aprenderemos sobre:
+
+- O que é gerenciamento de estado
+- Renderização de listas
+- A propriedade key
+- Prop drilling
+- O que são hooks
+- useState
+- Campos controlados
+- Eventos
+- Context API
+- Custom hooks
+
 ## Módulo 6 - Integração com o Backend
 
 ## Módulo 7 - Deploy

@@ -1,17 +1,14 @@
-import { Main } from "./components/Main/Main";
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import { Home } from "./pages/home";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router";
+import { AppContextProvider } from "./contexts";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main>
-        <Home />
-      </Main>
-      <Footer autor="Rafael" />
-    </>
+    <AppContextProvider>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </AppContextProvider>
   );
 }
 
