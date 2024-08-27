@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { api } from "../services/api";
 
 export const AppContext = createContext({});
 
@@ -7,6 +8,11 @@ export const AppContextProvider = (props) => {
 
   const [autor, setAutor] = useState("Rafael");
   const [tarefas, setTarefas] = useState([]);
+
+  const carregarTerefas = async () => {
+    const responsse = await api.get("/tarefas");
+    console.log(response);
+  };
 
   const adicionarTarefa = (nomeTarefa) => {
     const novaTarefa = {

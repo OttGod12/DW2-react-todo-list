@@ -95,4 +95,18 @@ Aprenderemos sobre:
 
 ## Módulo 6 - Integração com o Backend
 
+O que você vai aprender nesse módulo?
+
+Você vai aprender como criar um backend simulado com o JSON Server, configurar e utilizar o axios para interagir com o backend e utilizar o useEffect para lidar com sistemas externos.
+
+Aprenderemos sobre:
+
+- JSON Server
+- Scripts personalizados
+- Interação com o backend
+- Axios
+- Funções assíncronas
+- useEffect
+- Operadores de curto-circuito
+
 ## Módulo 7 - Deploy
