@@ -1,11 +1,11 @@
 import styles from "./TaskForm.module.css";
-import { TaskButton } from "../TaskButton/TaskButton";
-import { TaskInput } from "../TaskInput/TaskInput";
+
+import { TaskButton, TaskInput, Loading } from "../../components";
 import { useState } from "react";
 import { useAppContext } from "../../hooks";
 
 export function TaskForm() {
-  const { adicionarTarefa } = useAppContext();
+  const { adicionarTarefa, loadingCriar } = useAppContext();
   const [nomeTarefa, setNomeTarefa] = useState("");
 
   const handleFormSubmit = (event) => {
@@ -23,7 +23,7 @@ export function TaskForm() {
   return (
     <form className={styles.TaskForm} onSubmit={handleFormSubmit}>
       <TaskInput value={nomeTarefa} onChange={onChangeNomeTarefa} />
-      <TaskButton texto="+" />
+      <TaskButton texto={loadingCriar ? <Loading /> : "+"} />
     </form>
   );
 }

@@ -5,3 +5,4 @@ export * from "./TaskForm/TaskForm";
 export * from "./TaskInput/TaskInput";
 export * from "./TaskButton/TaskButton";
 export * from "./TaskList/TaskList";
+export * from "./Loading/Loading";
