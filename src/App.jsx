@@ -1,16 +1,37 @@
 import { Check } from "@phosphor-icons/react"
 import { Input } from "./components/Input"
-import { Lixeira } from "./components/Lixeira"
 import { Criar } from "./components/Criar"
 import { Item } from "./components/Item"
-
-
-
+import { Lista } from "./components/Lista"
+import { useState } from "react"
 
 
 
 
 function App() {
+
+  const [valorInput,setValorInput] = useState('')
+
+  const [item, setItem] = useState([])
+
+  const [contaId, setContaId] = useState(0)
+  
+  const criarItem = () => {
+    const novoItem = {id: contaId, texto: valorInput, concluido: false}
+    setItem ([...item, novoItem])
+    setContaId(()=> contaId+=1)
+    setValorInput('')
+  }
+
+  const removerItem = (id) => {
+    setItem(item.filter((item) => item.id !== id));
+  }
+
+  const alternaConcluirItem = (id) =>{
+    setItem(
+      item.map((tarefa) => tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa)
+    )
+  }
   
 
   return (
@@ -27,32 +48,23 @@ function App() {
       <section className="w-full max-w-3xl m-auto ">
         
         <div className="flex justify-between items-center gap-2 -translate-y-2/4">
-          <Input ></Input>
-          <Criar></Criar>
+          <Input value={valorInput} onChange={setValorInput}></Input>
+          <Criar onClick={criarItem}></Criar>
         </div>
 
 
         {/* Lista */}
         <div className="flex flex-col gap-6">
 
-          <header className="flex flex-1 justify-between items-center">
-            <div className="flex items-center gap-2 font-bold text-azul">
-              <p className="text-sm">Tarefas criadas</p>
-              <span className="px-2 py-1 rounded-2xl text-xs bg-cinza-400 text-cinza-200">
-                2
-              </span>
-            </div>
-            <div className="flex items-center gap-2 font-bold text-roxo">
-              <p className="text-sm">Concluídas</p>
-              <span className="px-2 py-1 rounded-2xl text-xs bg-cinza-400 text-cinza-200">
-                1 de 2
-              </span>
-            </div>
-          </header>
+          <Lista></Lista>
 
           <div className="flex flex-col gap-3">
-            <Item check={false}></Item>
-            <Item check={true}></Item>
+          <Item
+                id={tarefa.id}
+                item={item}
+                toggleConcluir={() => alternaConcluirItem(tarefa.id)}
+                removerTarefa={() => removerItem(item.id)}
+              />           
 
 
             

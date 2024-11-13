@@ -4,7 +4,7 @@ export function Lixeira() {
 
     return (
         <>
-            <button>
+            <button onClick={""}>
                 <Trash className="text-cinza-300 hover:text-danger"/>
               </button>
         
