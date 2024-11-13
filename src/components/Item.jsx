@@ -34,5 +34,7 @@ export function Item(props) {
               <Lixeira></Lixeira>
             </div>)}
         </>
+
+        //;
     )
 }
